@@ -1,6 +1,6 @@
 # Pretrained-Models-for-Multilingual-Federated-Learning
 In this repo, you will find a simplified implementation of federated learning for multilingual language models using flower framework. You may find the details in the paper cited below.
-To better understand the timing, I run this simulation with `distilbert-base-multilingual-cased`, `6 clients`, `1 local epoch` and `3 server rounds` on Tesla A100 GPU and it took about a day to complete. You may also see the results down below.
+To better understand the timing, I run this simulation with `distilbert-base-multilingual-cased`, `6 clients`, `1 local epoch` and `3 server rounds` on 4 Tesla A100 GPU and it took about a day to complete. You may also see the results down below.
 
 ![](visuals/results.png)
 
