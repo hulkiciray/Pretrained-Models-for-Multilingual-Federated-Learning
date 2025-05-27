@@ -1,4 +1,4 @@
-# Pretrained-Models-for-Multilingual-Federated-Learning-Paper-Replication
+# Pretrained-Models-for-Multilingual-Federated-Learning
 In this repo, you will find a simplified implementation of federated learning for multilingual language models using flower framework. You may find the detailed paper cited below. Feel free to contribute or reach out.
 
 ### CITATION
