@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "europerl"
+version = "1.0.0"
+description = "Federated learning with europarl dataset"
+license = "Apache-2.0"
+dependencies = [
+    "flwr[simulation]>=1.17.0",
+    "flwr-datasets[vision]>=0.5.0",
+    "torch>=2.5.1",
+    "torchvision>=0.20.1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.flwr.app]
+publisher = "hulkiciray"
+
+[tool.flwr.app.components]
+serverapp = "server_app:app"
+clientapp = "client_app:app"
+
+[tool.flwr.app.config]
+num-server-rounds = 3
+fraction-evaluate = 0.5 # a float defining the fraction of clients that will be selected for evaluation. If set to 0.0, federated evaluation will be disabled.
+local-epochs = 1
+min-evaluate-clients = 3 # an int: the minimum number of clients to be selected for evaluation.
+min-available-clients = 4 # an int that defines the minimum number of clients which need to be connected to the server before a round of federated evaluation can start.
+fraction-fit = 0.5 # percentage of clients to sample in each round
+
+[tool.flwr.federations]
+default = "local-simulation"
+
+[tool.flwr.federations.local-simulation]
+options.num-supernodes = 6
+options.backend.client-resources.num-cpus = 2
+options.backend.client-resources.num-gpus = 0.0
+options.backend.init_args.num_cpus = 10 # this is to limit the amount of cpus for the entire simulation
+options.backend.init_args.num_gpus = 4 # limit the amount of gpu for the entire simulation. I set this to 4 since I used my instution's cluster.
