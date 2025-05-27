@@ -20,6 +20,7 @@ After creating your data, from your terminal, create your virtual environment an
   year={2022}
 }
 ```
+---
 I also highly recommend you the Flower's tutorial video series
 [![YouTube](https://img.shields.io/badge/YouTube-Watch%20Video-red?logo=youtube)](https://youtube.com/playlist?list=PLNG4feLHqCWkdlSrEL2xbCtGa6QBxlUZb&si=IVbQyoJG4s7ovPuV)
 to better understand the concepts and push your knowledge even further.
